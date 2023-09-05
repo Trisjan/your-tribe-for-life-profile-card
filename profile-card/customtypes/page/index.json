@@ -1,0 +1,105 @@
+{
+	"id": "page",
+	"label": "Page",
+	"format": "page",
+	"repeatable": true,
+	"status": true,
+	"json": {
+		"Main": {
+			"uid": {
+				"type": "UID",
+				"config": {
+					"label": "UID",
+					"placeholder": ""
+				}
+			},
+			"title": {
+				"type": "StructuredText",
+				"config": {
+					"label": "Title",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "heading1"
+				}
+			},
+			"logo": {
+				"type": "Image",
+				"config": {
+					"label": "Logo",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"links": {
+				"type": "Group",
+				"config": {
+					"label": "Links",
+					"fields": {
+						"github": {
+							"type": "Link",
+							"config": {
+								"label": "Github",
+								"placeholder": "",
+								"select": "media"
+							}
+						},
+						"linkedin": {
+							"type": "Link",
+							"config": {
+								"label": "LinkedIn",
+								"placeholder": "",
+								"select": null
+							}
+						},
+						"instagram": {
+							"type": "Link",
+							"config": {
+								"label": "Instagram",
+								"placeholder": "",
+								"select": null
+							}
+						}
+					}
+				}
+			},
+			"slices": {
+				"type": "Slices",
+				"fieldset": "Slice Zone",
+				"config": {
+					"choices": {
+						"rich_text": {
+							"type": "SharedSlice"
+						}
+					}
+				}
+			}
+		},
+		"SEO & Metadata": {
+			"meta_title": {
+				"type": "Text",
+				"config": {
+					"label": "Meta Title",
+					"placeholder": "A title of the page used for social media and search engines"
+				}
+			},
+			"meta_description": {
+				"type": "Text",
+				"config": {
+					"label": "Meta Description",
+					"placeholder": "A brief summary of the page"
+				}
+			},
+			"meta_image": {
+				"type": "Image",
+				"config": {
+					"label": "Meta Image",
+					"constraint": {
+						"width": 2400,
+						"height": 1260
+					},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}
