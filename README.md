@@ -25,7 +25,7 @@
 ## Gebruik
 
 ## Bronnen
-
+https://www.manypixels.co/blog/brand-design/best-fonts-for-business-cards#:~:text=Some%20of%20the%20most%20common,Roman%2C%20Helvetica%2C%20and%20Arial.
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
