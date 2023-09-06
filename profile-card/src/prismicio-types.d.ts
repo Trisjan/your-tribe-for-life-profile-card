@@ -9,16 +9,6 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
  */
 export interface PageDocumentDataLinksItem {
 	/**
-	 * Github field in *Page → Links*
-	 *
-	 * - **Field Type**: Link to Media
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: page.links[].github
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	github: prismic.LinkToMediaField;
-
-	/**
 	 * LinkedIn field in *Page → Links*
 	 *
 	 * - **Field Type**: Link
@@ -37,9 +27,19 @@ export interface PageDocumentDataLinksItem {
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
 	instagram: prismic.LinkField;
+
+	/**
+	 * github field in *Page → Links*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: page.links[].github
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	github: prismic.LinkField;
 }
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice = RichTextSlice | ProfileCardFrontSlice;
 
 /**
  * Content for Page documents
@@ -120,6 +120,17 @@ interface PageDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	meta_image: prismic.ImageField<never>;
+
+	/**
+	 * Logo profile field in *Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: page.logo_profile
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo_profile: prismic.ImageField<never>;
 }
 
 /**
@@ -137,7 +148,110 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 	Lang
 >;
 
-export type AllDocumentTypes = PageDocument;
+/**
+ * Content for Profile_card_front documents
+ */
+interface ProfileCardFrontDocumentData {
+	/**
+	 * Logo field in *Profile_card_front*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: profile_card_front.logo
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo: prismic.ImageField<never>;
+
+	/**
+	 * Name field in *Profile_card_front*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: profile_card_front.name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	name: prismic.RichTextField;
+}
+
+/**
+ * Profile_card_front document from Prismic
+ *
+ * - **API ID**: `profile_card_front`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProfileCardFrontDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithoutUID<
+		Simplify<ProfileCardFrontDocumentData>,
+		'profile_card_front',
+		Lang
+	>;
+
+export type AllDocumentTypes = PageDocument | ProfileCardFrontDocument;
+
+/**
+ * Primary content in *ProfileCardFront → Primary*
+ */
+export interface ProfileCardFrontSliceDefaultPrimary {
+	/**
+	 * Name field in *ProfileCardFront → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: profile_card_front.primary.name
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	name: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ProfileCardFront → Items*
+ */
+export interface ProfileCardFrontSliceDefaultItem {
+	/**
+	 * Logo field in *ProfileCardFront → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: profile_card_front.items[].logo
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ProfileCardFront Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProfileCardFrontSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<ProfileCardFrontSliceDefaultPrimary>,
+	Simplify<ProfileCardFrontSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ProfileCardFront*
+ */
+type ProfileCardFrontSliceVariation = ProfileCardFrontSliceDefault;
+
+/**
+ * ProfileCardFront Shared Slice
+ *
+ * - **API ID**: `profile_card_front`
+ * - **Description**: ProfileCardFront
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProfileCardFrontSlice = prismic.SharedSlice<
+	'profile_card_front',
+	ProfileCardFrontSliceVariation
+>;
 
 /**
  * Primary content in *RichText → Primary*
@@ -234,7 +348,14 @@ declare module '@prismicio/client' {
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
+			ProfileCardFrontDocument,
+			ProfileCardFrontDocumentData,
 			AllDocumentTypes,
+			ProfileCardFrontSlice,
+			ProfileCardFrontSliceDefaultPrimary,
+			ProfileCardFrontSliceDefaultItem,
+			ProfileCardFrontSliceVariation,
+			ProfileCardFrontSliceDefault,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,

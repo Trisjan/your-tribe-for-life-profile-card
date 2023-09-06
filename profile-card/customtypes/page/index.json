@@ -35,14 +35,6 @@
 				"config": {
 					"label": "Links",
 					"fields": {
-						"github": {
-							"type": "Link",
-							"config": {
-								"label": "Github",
-								"placeholder": "",
-								"select": "media"
-							}
-						},
 						"linkedin": {
 							"type": "Link",
 							"config": {
@@ -58,6 +50,14 @@
 								"placeholder": "",
 								"select": null
 							}
+						},
+						"github": {
+							"type": "Link",
+							"config": {
+								"label": "github",
+								"placeholder": "",
+								"select": null
+							}
 						}
 					}
 				}
@@ -68,6 +68,9 @@
 				"config": {
 					"choices": {
 						"rich_text": {
+							"type": "SharedSlice"
+						},
+						"profile_card_front": {
 							"type": "SharedSlice"
 						}
 					}
@@ -97,6 +100,14 @@
 						"width": 2400,
 						"height": 1260
 					},
+					"thumbnails": []
+				}
+			},
+			"logo_profile": {
+				"type": "Image",
+				"config": {
+					"label": "Logo profile",
+					"constraint": {},
 					"thumbnails": []
 				}
 			}
