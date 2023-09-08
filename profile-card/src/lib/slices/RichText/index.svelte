@@ -1,5 +1,8 @@
 <script>
+
 	import { PrismicRichText } from '@prismicio/svelte';
+	import { PrismicImage } from '@prismicio/svelte';
+	import {PrismicLink} from '@prismicio/svelte';
 	import Label from './Label.svelte';
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
@@ -12,7 +15,12 @@
 		components={{
 			label: Label
 		}}
-	/>
+	/>	
+</section>
+
+<section>
+	<PrismicImage field={slice.primary.logo} />
+	<PrismicLink field={slice.primary.linkedin}>Link</PrismicLink>
 </section>
 
 <style>
