@@ -13,53 +13,13 @@
 					"placeholder": ""
 				}
 			},
-			"title": {
+			"name": {
 				"type": "StructuredText",
 				"config": {
-					"label": "Title",
+					"label": "Name",
 					"placeholder": "",
 					"allowTargetBlank": true,
 					"single": "heading1"
-				}
-			},
-			"logo": {
-				"type": "Image",
-				"config": {
-					"label": "Logo",
-					"constraint": {},
-					"thumbnails": []
-				}
-			},
-			"links": {
-				"type": "Group",
-				"config": {
-					"label": "Links",
-					"fields": {
-						"linkedin": {
-							"type": "Link",
-							"config": {
-								"label": "LinkedIn",
-								"placeholder": "",
-								"select": null
-							}
-						},
-						"instagram": {
-							"type": "Link",
-							"config": {
-								"label": "Instagram",
-								"placeholder": "",
-								"select": null
-							}
-						},
-						"github": {
-							"type": "Link",
-							"config": {
-								"label": "github",
-								"placeholder": "",
-								"select": null
-							}
-						}
-					}
 				}
 			},
 			"slices": {

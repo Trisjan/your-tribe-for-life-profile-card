@@ -4,41 +4,6 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-/**
- * Item in *Page → Links*
- */
-export interface PageDocumentDataLinksItem {
-	/**
-	 * LinkedIn field in *Page → Links*
-	 *
-	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: page.links[].linkedin
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	linkedin: prismic.LinkField;
-
-	/**
-	 * Instagram field in *Page → Links*
-	 *
-	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: page.links[].instagram
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	instagram: prismic.LinkField;
-
-	/**
-	 * github field in *Page → Links*
-	 *
-	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: page.links[].github
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	github: prismic.LinkField;
-}
-
 type PageDocumentDataSlicesSlice = RichTextSlice | ProfileCardFrontSlice;
 
 /**
@@ -46,37 +11,15 @@ type PageDocumentDataSlicesSlice = RichTextSlice | ProfileCardFrontSlice;
  */
 interface PageDocumentData {
 	/**
-	 * Title field in *Page*
+	 * Name field in *Page*
 	 *
 	 * - **Field Type**: Title
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: page.title
+	 * - **API ID Path**: page.name
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.TitleField;
-
-	/**
-	 * Logo field in *Page*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: page.logo
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	logo: prismic.ImageField<never>;
-
-	/**
-	 * Links field in *Page*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: page.links[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#group
-	 */
-	links: prismic.GroupField<Simplify<PageDocumentDataLinksItem>>;
+	name: prismic.TitleField;
 
 	/**
 	 * Slice Zone field in *Page*
@@ -254,21 +197,21 @@ export type ProfileCardFrontSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *RichText → Primary*
+ * Primary content in *ProfileCard → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
 	/**
-	 * Content field in *RichText → Primary*
+	 * Name field in *ProfileCard → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: Lorem ipsum...
-	 * - **API ID Path**: rich_text.primary.content
+	 * - **API ID Path**: rich_text.primary.name
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	content: prismic.RichTextField;
+	name: prismic.RichTextField;
 
 	/**
-	 * Github field in *RichText → Primary*
+	 * Github field in *ProfileCard → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -278,7 +221,7 @@ export interface RichTextSliceDefaultPrimary {
 	github: prismic.LinkField;
 
 	/**
-	 * LinkedIn field in *RichText → Primary*
+	 * LinkedIn field in *ProfileCard → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -288,7 +231,7 @@ export interface RichTextSliceDefaultPrimary {
 	linkedin: prismic.LinkField;
 
 	/**
-	 * Instagram field in *RichText → Primary*
+	 * Instagram field in *ProfileCard → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -298,7 +241,7 @@ export interface RichTextSliceDefaultPrimary {
 	instagram: prismic.LinkField;
 
 	/**
-	 * Logo field in *RichText → Primary*
+	 * Logo field in *ProfileCard → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
@@ -306,10 +249,80 @@ export interface RichTextSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	logo: prismic.ImageField<never>;
+
+	/**
+	 * Logo github field in *ProfileCard → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.logo_github
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo_github: prismic.ImageField<never>;
+
+	/**
+	 * Logo insta field in *ProfileCard → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.logo_insta
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo_insta: prismic.ImageField<never>;
+
+	/**
+	 * Logo linkedin field in *ProfileCard → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.logo_linkedin
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo_linkedin: prismic.ImageField<never>;
+
+	/**
+	 * Info student field in *ProfileCard → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.info_student
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	info_student: prismic.RichTextField;
+
+	/**
+	 * Info opleiding field in *ProfileCard → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.info_opleiding
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	info_opleiding: prismic.RichTextField;
+
+	/**
+	 * Email field in *ProfileCard → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.email
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	email: prismic.RichTextField;
+
+	/**
+	 * Profile picture field in *ProfileCard → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.profile_picture
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	profile_picture: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for RichText Slice
+ * Default variation for ProfileCard Slice
  *
  * - **API ID**: `default`
  * - **Description**: RichText
@@ -322,12 +335,12 @@ export type RichTextSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *RichText*
+ * Slice variation for *ProfileCard*
  */
 type RichTextSliceVariation = RichTextSliceDefault;
 
 /**
- * RichText Shared Slice
+ * ProfileCard Shared Slice
  *
  * - **API ID**: `rich_text`
  * - **Description**: RichText
