@@ -248,7 +248,7 @@ export interface RichTextSliceDefaultPrimary {
 	 * - **API ID Path**: rich_text.primary.logo
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	logo: prismic.ImageField<never>;
+	logo: prismic.ImageField<'desktop'>;
 
 	/**
 	 * Logo github field in *ProfileCard → Primary*
@@ -258,7 +258,7 @@ export interface RichTextSliceDefaultPrimary {
 	 * - **API ID Path**: rich_text.primary.logo_github
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	logo_github: prismic.ImageField<never>;
+	logo_github: prismic.ImageField<'desktop'>;
 
 	/**
 	 * Logo insta field in *ProfileCard → Primary*
@@ -268,7 +268,7 @@ export interface RichTextSliceDefaultPrimary {
 	 * - **API ID Path**: rich_text.primary.logo_insta
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	logo_insta: prismic.ImageField<never>;
+	logo_insta: prismic.ImageField<'desktop'>;
 
 	/**
 	 * Logo linkedin field in *ProfileCard → Primary*
@@ -278,7 +278,7 @@ export interface RichTextSliceDefaultPrimary {
 	 * - **API ID Path**: rich_text.primary.logo_linkedin
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	logo_linkedin: prismic.ImageField<never>;
+	logo_linkedin: prismic.ImageField<'desktop'>;
 
 	/**
 	 * Info student field in *ProfileCard → Primary*
@@ -318,7 +318,7 @@ export interface RichTextSliceDefaultPrimary {
 	 * - **API ID Path**: rich_text.primary.profile_picture
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	profile_picture: prismic.ImageField<never>;
+	profile_picture: prismic.ImageField<'desktop'>;
 }
 
 /**

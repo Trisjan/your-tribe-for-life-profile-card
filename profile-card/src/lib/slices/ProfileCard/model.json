@@ -1,120 +1,152 @@
 {
-	"id": "rich_text",
-	"type": "SharedSlice",
-	"name": "ProfileCard",
-	"description": "RichText",
-	"variations": [
-		{
-			"id": "default",
-			"name": "Default",
-			"docURL": "...",
-			"version": "sktwi1xtmkfgx8626",
-			"description": "RichText",
-			"primary": {
-				"name": {
-					"type": "StructuredText",
-					"config": {
-						"label": "Name",
-						"placeholder": "Lorem ipsum...",
-						"allowTargetBlank": true,
-						"multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,embed,list-item",
-						"labels": ["codespan"]
-					}
-				},
-				"github": {
-					"type": "Link",
-					"config": {
-						"label": "Github",
-						"placeholder": "",
-						"select": null
-					}
-				},
-				"linkedin": {
-					"type": "Link",
-					"config": {
-						"label": "LinkedIn",
-						"placeholder": "",
-						"select": null
-					}
-				},
-				"instagram": {
-					"type": "Link",
-					"config": {
-						"label": "Instagram",
-						"placeholder": "",
-						"select": null
-					}
-				},
-				"logo": {
-					"type": "Image",
-					"config": {
-						"label": "Logo",
-						"constraint": {},
-						"thumbnails": []
-					}
-				},
-				"logo_github": {
-					"type": "Image",
-					"config": {
-						"label": "Logo github",
-						"constraint": {},
-						"thumbnails": []
-					}
-				},
-				"logo_insta": {
-					"type": "Image",
-					"config": {
-						"label": "Logo insta",
-						"constraint": {},
-						"thumbnails": []
-					}
-				},
-				"logo_linkedin": {
-					"type": "Image",
-					"config": {
-						"label": "Logo linkedin",
-						"constraint": {},
-						"thumbnails": []
-					}
-				},
-				"info_student": {
-					"type": "StructuredText",
-					"config": {
-						"label": "Info student",
-						"placeholder": "",
-						"allowTargetBlank": true,
-						"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-					}
-				},
-				"info_opleiding": {
-					"type": "StructuredText",
-					"config": {
-						"label": "Info opleiding",
-						"placeholder": "",
-						"allowTargetBlank": true,
-						"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-					}
-				},
-				"email": {
-					"type": "StructuredText",
-					"config": {
-						"label": "Email",
-						"placeholder": "",
-						"allowTargetBlank": true,
-						"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-					}
-				},
-				"profile_picture": {
-					"type": "Image",
-					"config": {
-						"label": "Profile picture",
-						"constraint": {},
-						"thumbnails": []
-					}
-				}
-			},
-			"items": {},
-			"imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-		}
-	]
+  "id": "rich_text",
+  "type": "SharedSlice",
+  "name": "ProfileCard",
+  "description": "RichText",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "RichText",
+      "primary": {
+        "name": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Name",
+            "placeholder": "Lorem ipsum...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,embed,list-item",
+            "labels": [
+              "codespan"
+            ]
+          }
+        },
+        "github": {
+          "type": "Link",
+          "config": {
+            "label": "Github",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "linkedin": {
+          "type": "Link",
+          "config": {
+            "label": "LinkedIn",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "instagram": {
+          "type": "Link",
+          "config": {
+            "label": "Instagram",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "Logo",
+            "constraint": {},
+            "thumbnails": [
+              {
+                "name": "desktop",
+                "width": 50,
+                "height": 50
+              }
+            ]
+          }
+        },
+        "logo_github": {
+          "type": "Image",
+          "config": {
+            "label": "Logo github",
+            "constraint": {},
+            "thumbnails": [
+              {
+                "name": "desktop",
+                "width": 35,
+                "height": 35
+              }
+            ]
+          }
+        },
+        "logo_insta": {
+          "type": "Image",
+          "config": {
+            "label": "Logo insta",
+            "constraint": {},
+            "thumbnails": [
+              {
+                "name": "desktop",
+                "width": 35,
+                "height": 35
+              }
+            ]
+          }
+        },
+        "logo_linkedin": {
+          "type": "Image",
+          "config": {
+            "label": "Logo linkedin",
+            "constraint": {},
+            "thumbnails": [
+              {
+                "name": "desktop",
+                "width": 35,
+                "height": 35
+              }
+            ]
+          }
+        },
+        "info_student": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Info student",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "info_opleiding": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Info opleiding",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "email": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Email",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "profile_picture": {
+          "type": "Image",
+          "config": {
+            "label": "Profile picture",
+            "constraint": {},
+            "thumbnails": [
+              {
+                "name": "desktop",
+                "width": 210,
+                "height": 732
+              }
+            ]
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
 }
