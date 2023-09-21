@@ -3,7 +3,7 @@ import { asText } from '@prismicio/client';
 import { createClient } from '$lib/prismicio';
 import { ProgramFiles } from '$env/static/private';
 
-export const prerender = true;
+export const prerender = 'auto';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
